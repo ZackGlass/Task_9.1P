@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".NewAdActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/postTypeTextView"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:text="@string/post_type"
+            android:layout_marginLeft="10dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:layout_gravity="center"/>
+
+        <RadioGroup
+            android:id="@+id/radioButtonGroup"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/lostRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:buttonTint="@color/black"
+                android:layout_weight="1"
+                android:focusedByDefault="true"
+                android:text="@string/lost"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/foundRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:buttonTint="@color/black"
+                android:text="@string/found"
+                android:shadowColor="@color/purple_500"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </RadioGroup>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/nameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginLeft="10dp"
+
+
+        android:text="Name: " />
+
+    <EditText
+        android:id="@+id/nameEditText"
+        android:layout_width="match_parent"
+        android:layout_marginRight="10dp"
+        android:layout_height="55dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:textCursorDrawable="@null"
+        android:imeOptions="actionDone"
+        android:background="@drawable/textboxoutline"
+        android:paddingLeft="5dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/phoneTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginLeft="10dp"
+        android:text="@string/phone" />
+
+    <EditText
+        android:id="@+id/phoneEditText"
+        android:layout_width="match_parent"
+        android:layout_marginRight="10dp"
+        android:layout_height="55dp"
+        android:textCursorDrawable="@null"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/textboxoutline"
+        android:paddingLeft="5dp"
+        android:ems="10"
+        android:imeOptions="actionDone"
+        android:inputType="phone"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/descriptionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginLeft="10dp"
+        android:text="@string/description" />
+
+    <EditText
+        android:id="@+id/descriptionEditText"
+        android:layout_width="match_parent"
+        android:layout_marginRight="10dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/textboxoutline"
+        android:paddingLeft="5dp"
+        android:textCursorDrawable="@null"
+        android:imeOptions="actionDone"
+        android:ems="10"
+        android:inputType="textMultiLine"
+
+        android:text="" />
+
+    <TextView
+        android:id="@+id/dateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginLeft="10dp"
+        android:text="@string/date" />
+
+    <EditText
+        android:id="@+id/dateEditText"
+        android:layout_width="match_parent"
+        android:layout_marginRight="10dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="5dp"
+        android:textCursorDrawable="@null"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/textboxoutline"
+        android:paddingLeft="5dp"
+        android:imeOptions="actionDone"
+        android:ems="10"
+        android:inputType="date"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/locationTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginLeft="10dp"
+        android:text="@string/location" />
+
+    <EditText
+        android:id="@+id/locationEditText"
+        android:layout_width="match_parent"
+        android:layout_marginRight="10dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="5dp"
+        android:textCursorDrawable="@null"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/textboxoutline"
+        android:paddingLeft="5dp"
+        android:imeOptions="actionDone"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="40dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/navbutton"
+        android:text="@string/save" />
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
