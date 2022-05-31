@@ -44,7 +44,7 @@ public class ShowAdvertActivity extends AppCompatActivity {
         itemPhoneTextView.setText("Contact Number: " + selection.getPhone());
         itemDescriptionTextView.setText(selection.getDescription());
         itemDateTextView.setText("Date Found: " + selection.getDate());
-        itemLocationTextView.setText("Location Found: " + selection.getLocation());
+        itemLocationTextView.setText("Location Found: " + selection.getLocationName());
 
         removeButton.setOnClickListener(new View.OnClickListener() {
             @Override

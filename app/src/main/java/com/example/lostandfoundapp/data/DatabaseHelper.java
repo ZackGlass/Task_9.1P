@@ -27,15 +27,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         String CREATE_AD_TABLE = "CREATE TABLE " + Util.TABLE_NAME + "(" +
                 Util.AD_ID + " INTEGER PRIMARY KEY AUTOINCREMENT , " +
-                Util.AD_NAME + " TEXT, " + Util.AD_PHONE + " TEXT, " + Util.AD_DESCRIPTION + " TEXT, " +
-                Util.AD_DATE + " TEXT, " + Util.AD_LOCATION + " TEXT)";
+                Util.AD_NAME + " TEXT, " + Util.AD_PHONE + " TEXT, " +
+                Util.AD_DESCRIPTION + " TEXT, " + Util.AD_DATE + " TEXT, " +
+                Util.AD_LOCATION + " TEXT, " + Util.AD_LAT + " TEXT, " + Util.AD_LNG + " TEXT)";
         sqLiteDatabase.execSQL(CREATE_AD_TABLE);
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-        String DROP_AD_TABLE = "DROP TABLE IF EXISTS''";
-        sqLiteDatabase.execSQL(DROP_AD_TABLE, new String[]{Util.TABLE_NAME});
+    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1)
+    {
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + Util.TABLE_NAME);
 
         onCreate(sqLiteDatabase);
     }
@@ -48,7 +49,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(Util.AD_PHONE, advert.getPhone());
         contentValues.put(Util.AD_DESCRIPTION, advert.getDescription());
         contentValues.put(Util.AD_DATE, advert.getDate());
-        contentValues.put(Util.AD_LOCATION, advert.getLocation());
+        contentValues.put(Util.AD_LOCATION, advert.getLocationName());
+        contentValues.put(Util.AD_LAT, advert.getLat());
+        contentValues.put(Util.AD_LNG, advert.getLng());
 
         long newRowId = db.insert(Util.TABLE_NAME, null, contentValues);
         db.close();
@@ -75,7 +78,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 advert.setPhone(cursor.getString(2));
                 advert.setDescription(cursor.getString(3));
                 advert.setDate(cursor.getString(4));
-                advert.setLocation(cursor.getString(5));
+                advert.setLocationName(cursor.getString(5));
+                advert.setLat(cursor.getString(6));
+                advert.setLng(cursor.getString(7));
 
                 adList.add(advert);
 

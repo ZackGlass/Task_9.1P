@@ -3,6 +3,8 @@ package com.example.lostandfoundapp.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.google.android.gms.maps.model.LatLng;
+
 public class Advert implements Parcelable {
 
     private int ad_id;
@@ -10,14 +12,28 @@ public class Advert implements Parcelable {
     private String phone;
     private String description;
     private String date;
-    private String location;
+    private String locationName;
+    private String lat;
+    private String lng;
 
-    public Advert(String adName, String phone, String description, String date, String location) {
+    public Advert(String adName, String phone, String description, String date, String locationName, LatLng latlng) {
         this.adName = adName;
         this.phone = phone;
         this.description = description;
         this.date = date;
-        this.location = location;
+        this.locationName = locationName;
+        this.lat = Double.toString(latlng.latitude);
+        this.lng = Double.toString(latlng.longitude);
+    }
+
+    public Advert(String adName, String phone, String description, String date, String locationName, String lat, String lng) {
+        this.adName = adName;
+        this.phone = phone;
+        this.description = description;
+        this.date = date;
+        this.locationName = locationName;
+        this.lat = lat;
+        this.lng = lng;
     }
 
     public Advert() {
@@ -29,7 +45,9 @@ public class Advert implements Parcelable {
         phone = in.readString();
         description = in.readString();
         date = in.readString();
-        location = in.readString();
+        locationName = in.readString();
+        lat = in.readString();
+        lng = in.readString();
     }
 
     public static final Creator<Advert> CREATOR = new Creator<Advert>() {
@@ -84,14 +102,29 @@ public class Advert implements Parcelable {
         this.date = date;
     }
 
-    public String getLocation() {
-        return location;
+    public String getLocationName() {
+        return locationName;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public void setLocationName(String location) {
+        this.locationName = location;
     }
 
+    public String getLat() {
+        return lat;
+    }
+
+    public void setLat(String lat) {
+        this.lat = lat;
+    }
+
+    public String getLng() {
+        return lng;
+    }
+
+    public void setLng(String lng) {
+        this.lng = lng;
+    }
 
     @Override
     public int describeContents() {
@@ -105,6 +138,8 @@ public class Advert implements Parcelable {
         parcel.writeString(phone);
         parcel.writeString(description);
         parcel.writeString(date);
-        parcel.writeString(location);
+        parcel.writeString(locationName);
+        parcel.writeString(lat);
+        parcel.writeString(lng);
     }
 }

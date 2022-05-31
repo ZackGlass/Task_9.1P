@@ -40,10 +40,6 @@ public class ShowAllActivity extends AppCompatActivity {
 
         adListView = findViewById(R.id.adListView);
 
-
-
-
-
     }
 
     @Override

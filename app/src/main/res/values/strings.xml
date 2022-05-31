@@ -12,4 +12,5 @@
     <string name="date">Date:</string>
     <string name="location">Location:</string>
     <string name="save">Save</string>
+    <string name="title_activity_map">MapActivity</string>
 </resources>
